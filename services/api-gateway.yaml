@@ -10,7 +10,7 @@ key: api-gateway
 description: API Gateway for all public clients
 languages:
   - go
-repository_link: github.com/somecompaty/api-gateway
+repository_link: https://github.com/somecompaty/api-gateway
 tags:
   - api-gateway
   - infrastructure
@@ -27,29 +27,29 @@ service:
   status: adopt
 
 docs:
-  api: api-docs.somecompany.net/gateway
-  maintenance: github.com/somecompaty/gateway/tree/master/docs
+  api: https://api-docs.somecompany.net/gateway
+  maintenance: https://github.com/somecompaty/gateway/tree/master/docs
   domain: https://microservices.io/patterns/apigateway.html
 
 environments:
   production:
-    url: gateway.somecompaty.com
-    healthcheck_url: gateway.somecompaty.com/health
-    logs_url: logs.somecompaty.net/gateway
-    error_tracker_url: rollbar.com/somecompaty/gateway
+    url: https://gateway.somecompaty.com
+    healthcheck_url: https://gateway.somecompaty.com/health
+    logs_url: https://logs.somecompaty.net/gateway
+    error_tracker_url: https://rollbar.com/somecompaty/gateway
     tags:
       - gateway
     monitoring:
-      grafana: grafana.somecompaty.net/gateway
+      grafana: https://grafana.somecompaty.net/gateway
 
   stage:
-    url: gateway.somecompaty-stage.net
-    healthcheck_url: gateway.somecompaty-sgate.net/health
-    logs_url: logs.somecompaty-stage.net/gateway
-    error_tracker_url: rollbar.com/somecompaty/gateway
+    url: https://gateway.somecompaty-stage.net
+    healthcheck_url: https://gateway.somecompaty-sgate.net/health
+    logs_url: https://logs.somecompaty-stage.net/gateway
+    error_tracker_url: https://rollbar.com/somecompaty/gateway
 
 operations:
-  ci_build_url: circleci.com/somecompaty/gateway
+  ci_build_url: https://circleci.com/somecompaty/gateway
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)

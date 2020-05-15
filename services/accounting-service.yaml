@@ -11,7 +11,7 @@ description: Service with all information about accounts and users
 languages:
   - ruby
   - js
-repository_link: github.com/somecompaty/accounting
+repository_link: https://github.com/somecompaty/accounting
 tags:
   - accounts
 
@@ -26,23 +26,23 @@ service:
   status: hold
 
 docs:
-  api: api-docs.somecompany.net/accounting-service
-  maintenance: github.com/somecompaty/authorization/tree/master/docs
+  api: https://api-docs.somecompany.net/accounting-service
+  maintenance: https://github.com/somecompaty/authorization/tree/master/docs
 
 # You can add any count of environments and you can use any names instead production, like stage, demo, etc
 environments:
   production:
-    url: accounting.somecompaty.com
-    healthcheck_url: accounting.somecompaty.com/health
-    logs_url: logs.somecompaty.net/accounting
+    url: https://accounting.somecompaty.com
+    healthcheck_url: https://accounting.somecompaty.com/health
+    logs_url: https://logs.somecompaty.net/accounting
 
   stage:
-    url: accounting.somecompaty-stage.net
-    healthcheck_url: accounting.somecompaty-stage.net/health
-    logs_url: logs.somecompaty-stage.net/accounting
+    url: https://accounting.somecompaty-stage.net
+    healthcheck_url: https://accounting.somecompaty-stage.net/health
+    logs_url: https://logs.somecompaty-stage.net/accounting
 
 operations:
-  ci_build_url: jenkins.somecompaty.net/accounting-service
+  ci_build_url: https://jenkins.somecompaty.net/accounting-service
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)

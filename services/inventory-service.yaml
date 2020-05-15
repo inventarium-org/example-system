@@ -25,34 +25,34 @@ service:
   status: trial
 
 docs:
-  api: api-docs.somecompany.net/inventory-service
-  maintenance: github.com/somecompaty/inventory/tree/master/docs
-  domain: confluence.com/somecompaty/orders-and-items
+  api: https://api-docs.somecompany.net/inventory-service
+  maintenance: https://github.com/somecompaty/inventory/tree/master/docs
+  domain: https://confluence.com/somecompaty/orders-and-items
 
 # You can add any count of environments and you can use any names instead production, like stage, demo, etc
 environments:
   production:
-    url: inventory.somecompaty.com
-    healthcheck_url: inventory.somecompaty.com/health
-    logs_url: logs.somecompaty.net/inventory
-    error_tracker_url: rollbar.com/somecompaty/inventory
+    url: https://inventory.somecompaty.com
+    healthcheck_url: https://inventory.somecompaty.com/health
+    logs_url: https://logs.somecompaty.net/inventory
+    error_tracker_url: https://rollbar.com/somecompaty/inventory
     monitoring:
-      grafana: grafana.somecompaty.net/inventory
+      grafana: https://grafana.somecompaty.net/inventory
 
   stage:
-    url: inventory.somecompaty-stage.net
-    healthcheck_url: inventory.somecompaty-sgate.net/health
-    logs_url: logs.somecompaty-stage.net/inventory
-    error_tracker_url: rollbar.com/somecompaty/inventory
+    url: https://inventory.somecompaty-stage.net
+    healthcheck_url: https://inventory.somecompaty-sgate.net/health
+    logs_url: https://logs.somecompaty-stage.net/inventory
+    error_tracker_url: https://rollbar.com/somecompaty/inventory
 
   dev:
-    url: inventory.somecompaty-dev.net
-    healthcheck_url: inventory.somecompaty-dev.net/health
-    logs_url: logs.somecompaty-dev.net/inventory
-    error_tracker_url: rollbar.com/somecompaty/inventory
+    url: https://inventory.somecompaty-dev.net
+    healthcheck_url: https://inventory.somecompaty-dev.net/health
+    logs_url: https://logs.somecompaty-dev.net/inventory
+    error_tracker_url: https://rollbar.com/somecompaty/inventory
 
 operations:
-  ci_build_url: jenkins.somecompaty.net/inventory-service
+  ci_build_url: https://jenkins.somecompaty.net/inventory-service
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
