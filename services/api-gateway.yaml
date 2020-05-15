@@ -18,7 +18,7 @@ tags:
 
 owner:
   team_or_developer_name: Infrastructure team
-  slack_channel: #infra-core
+  slack_channel: '#infra-core'
 
 service:
   # optional, can be (critical | normal | internal | experiment)

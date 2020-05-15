@@ -17,7 +17,7 @@ tags:
 
 owner:
   team_or_developer_name: Core team
-  slack_channel: #core-eng
+  slack_channel: '#core-eng'
 
 service:
   # optional, can be (critical | normal | internal | experiment)
