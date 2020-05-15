@@ -1,0 +1,59 @@
+version: v0
+
+# You need to provide only name and key fields, everything else can be empty
+# For example, if you don't have documentation or environments you can add it later
+
+# required
+name: Accounting service
+# required, should be unique for each service
+key: accounting-service
+description: Service with all information about accounts and users
+languages:
+  - ruby
+  - js
+repository_link: github.com/somecompaty/accounting
+tags:
+  - accounts
+
+owner:
+  team_or_developer_name: Core team
+  slack_channel: #core-eng
+
+service:
+  # optional, can be (critical | normal | internal | experiment)
+  classification: normal
+  # optional, can be (adopt | hold | trial | in_development)
+  status: hold
+
+docs:
+  api: api-docs.somecompany.net/accounting-service
+  maintenance: github.com/somecompaty/authorization/tree/master/docs
+
+# You can add any count of environments and you can use any names instead production, like stage, demo, etc
+environments:
+  production:
+    url: accounting.somecompaty.com
+    healthcheck_url: accounting.somecompaty.com/health
+    logs_url: logs.somecompaty.net/accounting
+
+  stage:
+    url: accounting.somecompaty-stage.net
+    healthcheck_url: accounting.somecompaty-stage.net/health
+    logs_url: logs.somecompaty-stage.net/accounting
+
+operations:
+  ci_build_url: jenkins.somecompaty.net/accounting-service
+
+communications:
+    # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
+  - type: event-producer
+    # reqired, can be anything like (service key | kafka | rabbitmq | etc)
+    target: kafka
+    # optional, can be (critical | uncritical)
+    criticality: critical
+    # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
+    resource:
+      - account-topic
+    # optional
+    custom_data:
+      version: 2

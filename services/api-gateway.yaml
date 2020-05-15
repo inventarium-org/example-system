@@ -1,0 +1,91 @@
+version: v0
+
+# You need to provide only name and key fields, everything else can be empty
+# For example, if you don't have documentation or environments you can add it later
+
+# required
+name: API Gateway
+# required, should be unique for each service
+key: api-gateway
+description: API Gateway for all public clients
+languages:
+  - go
+repository_link: github.com/somecompaty/api-gateway
+tags:
+  - api-gateway
+  - infrastructure
+  - auth
+
+owner:
+  team_or_developer_name: Infrastructure team
+  slack_channel: #infra-core
+
+service:
+  # optional, can be (critical | normal | internal | experiment)
+  classification: critical
+  # optional, can be (adopt | hold | trial | in_development)
+  status: adopt
+
+docs:
+  api: api-docs.somecompany.net/gateway
+  maintenance: github.com/somecompaty/gateway/tree/master/docs
+  domain: https://microservices.io/patterns/apigateway.html
+
+environments:
+  production:
+    url: gateway.somecompaty.com
+    healthcheck_url: gateway.somecompaty.com/health
+    logs_url: logs.somecompaty.net/gateway
+    error_tracker_url: rollbar.com/somecompaty/gateway
+    tags:
+      - gateway
+    monitoring:
+      grafana: grafana.somecompaty.net/gateway
+
+  stage:
+    url: gateway.somecompaty-stage.net
+    healthcheck_url: gateway.somecompaty-sgate.net/health
+    logs_url: logs.somecompaty-stage.net/gateway
+    error_tracker_url: rollbar.com/somecompaty/gateway
+
+operations:
+  ci_build_url: circleci.com/somecompaty/gateway
+
+communications:
+    # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
+  - type: http
+    # reqired, can be anything like (service key | kafka | rabbitmq | etc)
+    target: authorization-service
+    # optional, can be (critical | uncritical)
+    criticality: criticality
+    # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
+    resource:
+      - access-token
+
+    # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
+  - type: http
+    # reqired, can be anything like (service key | kafka | rabbitmq | etc)
+    target: inventory-service
+    # optional, can be (critical | uncritical)
+    criticality: criticality
+
+    # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
+  - type: http
+    # reqired, can be anything like (service key | kafka | rabbitmq | etc)
+    target: accounting-service
+    # optional, can be (critical | uncritical)
+    criticality: criticality
+
+    # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
+  - type: http
+    # reqired, can be anything like (service key | kafka | rabbitmq | etc)
+    target: shipping-service
+    # optional, can be (critical | uncritical)
+    criticality: uncritical
+
+    # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
+  - type: http
+    # reqired, can be anything like (service key | kafka | rabbitmq | etc)
+    target: store-service
+    # optional, can be (critical | uncritical)
+    criticality: critical
