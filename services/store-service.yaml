@@ -1,0 +1,69 @@
+version: v0
+
+# You need to provide only name and key fields, everything else can be empty
+# For example, if you don't have documentation or environments you can add it later
+
+# required
+name: Store service
+# required, should be unique for each service
+key: store-service
+description: Service with all information about orders
+languages:
+  - ruby
+repository_link: github.com/somecompaty/store
+tags:
+  - items
+  - accounts
+  - orders
+
+owner:
+  team_or_developer_name: Orders team
+  slack_channel: '#orders-eng'
+
+service:
+  # optional, can be (critical | normal | internal | experiment)
+  classification: critical
+  # optional, can be (adopt | hold | trial | in_development)
+  status: hold
+
+docs:
+  api: api-docs.somecompany.net/store-service
+  maintenance: github.com/somecompaty/store/tree/master/docs
+  domain: confluence.com/somecompaty/orders-and-items
+
+# You can add any count of environments and you can use any names instead production, like stage, demo, etc
+environments:
+  production:
+    url: store.somecompaty.com
+    healthcheck_url: store.somecompaty.com/health
+    logs_url: logs.somecompaty.net/store
+    error_tracker_url: rollbar.com/somecompaty/store
+    monitoring:
+      grafana: grafana.somecompaty.net/store
+
+  stage:
+    url: store.somecompaty-stage.net
+    healthcheck_url: store.somecompaty-sgate.net/health
+    logs_url: logs.somecompaty-stage.net/store
+    error_tracker_url: rollbar.com/somecompaty/store
+
+  dev:
+    url: store.somecompaty-dev.net
+    healthcheck_url: store.somecompaty-dev.net/health
+    logs_url: logs.somecompaty-dev.net/store
+    error_tracker_url: rollbar.com/somecompaty/store
+
+operations:
+  ci_build_url: jenkins.somecompaty.net/store-service
+
+communications:
+    # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
+  - type: event-consumer
+    # reqired, can be anything like (service key | kafka | rabbitmq | etc)
+    target: kafka
+    # optional, can be (critical | uncritical)
+    criticality: critical
+    # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
+    resource:
+      - items-topic
+      - account-topic
