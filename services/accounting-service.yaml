@@ -11,7 +11,7 @@ description: Service with all information about accounts and users
 languages:
   - ruby
   - js
-repository_link: https://github.com/somecompaty/accounting
+repository_link: https://github.com/somecompany/accounting
 tags:
   - accounts
 
@@ -27,22 +27,22 @@ service:
 
 docs:
   api: https://api-docs.somecompany.net/accounting-service
-  maintenance: https://github.com/somecompaty/authorization/tree/master/docs
+  maintenance: https://github.com/somecompany/authorization/tree/master/docs
 
 # You can add any count of environments and you can use any names instead production, like stage, demo, etc
 environments:
   production:
-    url: https://accounting.somecompaty.com
-    healthcheck_url: https://accounting.somecompaty.com/health
-    logs_url: https://logs.somecompaty.net/accounting
+    url: https://accounting.somecompany.com
+    healthcheck_url: https://accounting.somecompany.com/health
+    logs_url: https://logs.somecompany.net/accounting
 
   stage:
-    url: https://accounting.somecompaty-stage.net
-    healthcheck_url: https://accounting.somecompaty-stage.net/health
-    logs_url: https://logs.somecompaty-stage.net/accounting
+    url: https://accounting.somecompany-stage.net
+    healthcheck_url: https://accounting.somecompany-stage.net/health
+    logs_url: https://logs.somecompany-stage.net/accounting
 
 operations:
-  ci_build_url: https://jenkins.somecompaty.net/accounting-service
+  ci_build_url: https://jenkins.somecompany.net/accounting-service
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
@@ -52,8 +52,8 @@ communications:
     # optional, can be (critical | uncritical)
     criticality: critical
     # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
-    resource:
-      - account-topic
+    resources:
+      - 'account-topic'
     # optional
     custom_data:
       version: 2

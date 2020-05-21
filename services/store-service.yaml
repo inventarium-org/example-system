@@ -10,7 +10,7 @@ key: store-service
 description: Service with all information about orders
 languages:
   - ruby
-repository_link: https://github.com/somecompaty/store
+repository_link: https://github.com/somecompany/store
 tags:
   - items
   - accounts
@@ -28,33 +28,33 @@ service:
 
 docs:
   api: https://api-docs.somecompany.net/store-service
-  maintenance: https://github.com/somecompaty/store/tree/master/docs
-  domain: https://confluence.com/somecompaty/orders-and-items
+  maintenance: https://github.com/somecompany/store/tree/master/docs
+  domain: https://confluence.com/somecompany/orders-and-items
 
 # You can add any count of environments and you can use any names instead production, like stage, demo, etc
 environments:
   production:
-    url: https://store.somecompaty.com
-    healthcheck_url: https://store.somecompaty.com/health
-    logs_url: https://logs.somecompaty.net/store
-    error_tracker_url: https://rollbar.com/somecompaty/store
+    url: https://store.somecompany.com
+    healthcheck_url: https://store.somecompany.com/health
+    logs_url: https://logs.somecompany.net/store
+    error_tracker_url: https://rollbar.com/somecompany/store
     monitoring:
-      grafana: https://grafana.somecompaty.net/store
+      grafana: https://grafana.somecompany.net/store
 
   stage:
-    url: https://store.somecompaty-stage.net
-    healthcheck_url: https://store.somecompaty-sgate.net/health
-    logs_url: https://logs.somecompaty-stage.net/store
-    error_tracker_url: https://rollbar.com/somecompaty/store
+    url: https://store.somecompany-stage.net
+    healthcheck_url: https://store.somecompany-sgate.net/health
+    logs_url: https://logs.somecompany-stage.net/store
+    error_tracker_url: https://rollbar.com/somecompany/store
 
   dev:
-    url: https://store.somecompaty-dev.net
-    healthcheck_url: https://store.somecompaty-dev.net/health
-    logs_url: https://logs.somecompaty-dev.net/store
-    error_tracker_url: https://rollbar.com/somecompaty/store
+    url: https://store.somecompany-dev.net
+    healthcheck_url: https://store.somecompany-dev.net/health
+    logs_url: https://logs.somecompany-dev.net/store
+    error_tracker_url: https://rollbar.com/somecompany/store
 
 operations:
-  ci_build_url: https://jenkins.somecompaty.net/store-service
+  ci_build_url: https://jenkins.somecompany.net/store-service
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
@@ -64,6 +64,6 @@ communications:
     # optional, can be (critical | uncritical)
     criticality: critical
     # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
-    resource:
+    resources:
       - items-topic
       - account-topic

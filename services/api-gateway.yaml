@@ -10,7 +10,7 @@ key: api-gateway
 description: API Gateway for all public clients
 languages:
   - go
-repository_link: https://github.com/somecompaty/api-gateway
+repository_link: https://github.com/somecompany/api-gateway
 tags:
   - api-gateway
   - infrastructure
@@ -28,28 +28,28 @@ service:
 
 docs:
   api: https://api-docs.somecompany.net/gateway
-  maintenance: https://github.com/somecompaty/gateway/tree/master/docs
+  maintenance: https://github.com/somecompany/gateway/tree/master/docs
   domain: https://microservices.io/patterns/apigateway.html
 
 environments:
   production:
-    url: https://gateway.somecompaty.com
-    healthcheck_url: https://gateway.somecompaty.com/health
-    logs_url: https://logs.somecompaty.net/gateway
-    error_tracker_url: https://rollbar.com/somecompaty/gateway
+    url: https://gateway.somecompany.com
+    healthcheck_url: https://gateway.somecompany.com/health
+    logs_url: https://logs.somecompany.net/gateway
+    error_tracker_url: https://rollbar.com/somecompany/gateway
     tags:
       - gateway
     monitoring:
-      grafana: https://grafana.somecompaty.net/gateway
+      grafana: https://grafana.somecompany.net/gateway
 
   stage:
-    url: https://gateway.somecompaty-stage.net
-    healthcheck_url: https://gateway.somecompaty-sgate.net/health
-    logs_url: https://logs.somecompaty-stage.net/gateway
-    error_tracker_url: https://rollbar.com/somecompaty/gateway
+    url: https://gateway.somecompany-stage.net
+    healthcheck_url: https://gateway.somecompany-sgate.net/health
+    logs_url: https://logs.somecompany-stage.net/gateway
+    error_tracker_url: https://rollbar.com/somecompany/gateway
 
 operations:
-  ci_build_url: https://circleci.com/somecompaty/gateway
+  ci_build_url: https://circleci.com/somecompany/gateway
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
@@ -59,7 +59,7 @@ communications:
     # optional, can be (critical | uncritical)
     criticality: criticality
     # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
-    resource:
+    resources:
       - access-token
 
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)

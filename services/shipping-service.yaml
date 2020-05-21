@@ -10,7 +10,7 @@ key: shipping-service
 description: Service related to shipping orders logic
 languages:
   - python
-repository_link: https://github.com/somecompaty/shipping
+repository_link: https://github.com/somecompany/shipping
 tags:
   - orders
 
@@ -26,27 +26,27 @@ service:
 
 docs:
   api: https://api-docs.somecompany.net/shipping-service
-  maintenance: https://github.com/somecompaty/shipping/tree/master/docs
-  domain: https://confluence.com/somecompaty/orders-and-items
+  maintenance: https://github.com/somecompany/shipping/tree/master/docs
+  domain: https://confluence.com/somecompany/orders-and-items
 
 # You can add any count of environments and you can use any names instead production, like stage, demo, etc
 environments:
   production:
-    url: https://shipping.somecompaty.com
-    healthcheck_url: https://shipping.somecompaty.com/health
-    logs_url: https://logs.somecompaty.net/shipping
-    error_tracker_url: https://rollbar.com/somecompaty/shipping
+    url: https://shipping.somecompany.com
+    healthcheck_url: https://shipping.somecompany.com/health
+    logs_url: https://logs.somecompany.net/shipping
+    error_tracker_url: https://rollbar.com/somecompany/shipping
     monitoring:
-      grafana: https://grafana.somecompaty.net/shipping
+      grafana: https://grafana.somecompany.net/shipping
 
   stage:
-    url: https://shipping.somecompaty-stage.net
-    healthcheck_url: https://shipping.somecompaty-sgate.net/health
-    logs_url: https://logs.somecompaty-stage.net/shipping
-    error_tracker_url: https://rollbar.com/somecompaty/shipping
+    url: https://shipping.somecompany-stage.net
+    healthcheck_url: https://shipping.somecompany-sgate.net/health
+    logs_url: https://logs.somecompany-stage.net/shipping
+    error_tracker_url: https://rollbar.com/somecompany/shipping
 
 operations:
-  ci_build_url: https://circleci.com/somecompaty/store-service
+  ci_build_url: https://circleci.com/somecompany/store-service
 
 # communications:
 #     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)

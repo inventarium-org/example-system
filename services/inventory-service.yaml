@@ -10,7 +10,7 @@ key: inventory-service
 description: Service with information about all items in the system
 languages:
   - java
-repository_link: github.com/somecompaty/inventory
+repository_link: github.com/somecompany/inventory
 tags:
   - items
 
@@ -26,33 +26,33 @@ service:
 
 docs:
   api: https://api-docs.somecompany.net/inventory-service
-  maintenance: https://github.com/somecompaty/inventory/tree/master/docs
-  domain: https://confluence.com/somecompaty/orders-and-items
+  maintenance: https://github.com/somecompany/inventory/tree/master/docs
+  domain: https://confluence.com/somecompany/orders-and-items
 
 # You can add any count of environments and you can use any names instead production, like stage, demo, etc
 environments:
   production:
-    url: https://inventory.somecompaty.com
-    healthcheck_url: https://inventory.somecompaty.com/health
-    logs_url: https://logs.somecompaty.net/inventory
-    error_tracker_url: https://rollbar.com/somecompaty/inventory
+    url: https://inventory.somecompany.com
+    healthcheck_url: https://inventory.somecompany.com/health
+    logs_url: https://logs.somecompany.net/inventory
+    error_tracker_url: https://rollbar.com/somecompany/inventory
     monitoring:
-      grafana: https://grafana.somecompaty.net/inventory
+      grafana: https://grafana.somecompany.net/inventory
 
   stage:
-    url: https://inventory.somecompaty-stage.net
-    healthcheck_url: https://inventory.somecompaty-sgate.net/health
-    logs_url: https://logs.somecompaty-stage.net/inventory
-    error_tracker_url: https://rollbar.com/somecompaty/inventory
+    url: https://inventory.somecompany-stage.net
+    healthcheck_url: https://inventory.somecompany-sgate.net/health
+    logs_url: https://logs.somecompany-stage.net/inventory
+    error_tracker_url: https://rollbar.com/somecompany/inventory
 
   dev:
-    url: https://inventory.somecompaty-dev.net
-    healthcheck_url: https://inventory.somecompaty-dev.net/health
-    logs_url: https://logs.somecompaty-dev.net/inventory
-    error_tracker_url: https://rollbar.com/somecompaty/inventory
+    url: https://inventory.somecompany-dev.net
+    healthcheck_url: https://inventory.somecompany-dev.net/health
+    logs_url: https://logs.somecompany-dev.net/inventory
+    error_tracker_url: https://rollbar.com/somecompany/inventory
 
 operations:
-  ci_build_url: https://jenkins.somecompaty.net/inventory-service
+  ci_build_url: https://jenkins.somecompany.net/inventory-service
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
@@ -62,7 +62,7 @@ communications:
     # optional, can be (critical | uncritical)
     criticality: critical
     # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
-    resource:
+    resources:
       - items-topic
 
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)

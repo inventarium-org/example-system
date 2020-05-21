@@ -10,7 +10,7 @@ key: authorization-service
 description: Accounting service for getting access token for API Gateway
 languages:
   - ruby
-repository_link: https://github.com/somecompaty/authorization
+repository_link: https://github.com/somecompany/authorization
 tags:
   - auth
   - accounts
@@ -27,18 +27,18 @@ service:
 
 docs:
   api: https://api-docs.somecompany.net/authorization
-  maintenance: https://github.com/somecompaty/authorization/tree/master/docs
+  maintenance: https://github.com/somecompany/authorization/tree/master/docs
   domain:
 
 # You can add any count of environments and you can use any names instead production, like stage, demo, etc
 environments:
   production:
-    url: https://auth-n.somecompaty.com
-    healthcheck_url: https://auth-n.somecompaty.com/health
-    logs_url: https://logs.somecompaty.net/authorization-service
+    url: https://auth-n.somecompany.com
+    healthcheck_url: https://auth-n.somecompany.com/health
+    logs_url: https://logs.somecompany.net/authorization-service
 
 operations:
-  ci_build_url: https://jenkins.somecompaty.net/authorization-service
+  ci_build_url: https://jenkins.somecompany.net/authorization-service
 
 communications:
     # type is reqired, can be (http | rpc | graphql | event-producer | event-consumer)
@@ -48,7 +48,7 @@ communications:
     # optional, can be (critical | uncritical)
     criticality: critical
     # optional list, can be (topic name | queue name | rpc resource | rest resource | gqlschema name)
-    resource:
+    resources:
       - account-topic
     # optional
     custom_data:
