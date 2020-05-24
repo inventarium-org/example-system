@@ -11,3 +11,7 @@ for filename in ./services/*.yaml; do
   INVENTARIUM_TOKEN=<org-token> inventarium push $filename
 done
 ```
+
+## License
+
+[MIT License](https://github.com/inventarium-org/example-system/blob/master/LICENSE)
